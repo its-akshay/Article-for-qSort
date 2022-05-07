@@ -112,7 +112,6 @@ int iPartition(int array[], int startingIndex, int endingIndex)
     swap(array[i + 1], array[endingIndex]);
     return i + 1;
 }
-
 void qSort(int array[], int startingIndex, int endingIndex)
 {
     if (startingIndex < endingIndex)
@@ -138,5 +137,6 @@ int main()
     for (int x : array)
         cout << x << " ";
 }
+
 OUTPUT:  30 50 60 70 90 100 110
 
