@@ -91,52 +91,8 @@ The worst-case time complexity of quicksort is O(n2).
 
 C++ Implementation for the above array:
 
-#include <bits/stdc++.h>
-using namespace std;
+![code2](https://user-images.githubusercontent.com/71098450/167259879-f465ccd3-79ba-4f30-9561-58464c8d29bd.png)
 
-int iPartition(int array[], int startingIndex, int endingIndex)
-{
-    int partitioningIndexpivot = array[endingIndex];
-    // Here,i is Index of smaller element
-    int i = startingIndex - 1;
-
-    for (int j = startingIndex; j <= endingIndex - 1; j++)
-    {
-        if (array[j] < partitioningIndexpivot)
-        {
-            i++;
-
-            swap(array[i], array[j]);
-        }
-    }
-    swap(array[i + 1], array[endingIndex]);
-    return i + 1;
-}
-void qSort(int array[], int startingIndex, int endingIndex)
-{
-    if (startingIndex < endingIndex)
-    {
-        int partitioningIndex = iPartition(array, startingIndex, endingIndex);
-
-        //  Before partitioningIndex
-        qSort(array, startingIndex, partitioningIndex - 1);
-
-        // After partitioningIndex
-        qSort(array, partitioningIndex + 1, endingIndex);
-    }
-}
-
-int main()
-{
-
-    int array[] = {30, 100, 50, 110, 60, 70, 90};
-
-    int n = sizeof(array) / sizeof(array[0]);
-
-    qSort(array, 0, n - 1);
-    for (int x : array)
-        cout << x << " ";
-}
 
 OUTPUT:  30 50 60 70 90 100 110
 
